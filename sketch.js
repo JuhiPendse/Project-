@@ -11,12 +11,14 @@ function setup() {
 
   speed=random(55,90)
   weight=random(400,1500)
+
+  car.velocityX = speed ;
+
 }
 
 function draw() {
   background("black");  
 
-  car.velocityX = speed ;
 
   if(wall.x - car.x < (car.width+wall.width)/2)
   {
@@ -29,7 +31,7 @@ function draw() {
   if(deformation<180 && deformation>100){
     car.shapeColor=color(230,230,0)  
   }
-  if(deformation>100){
+  if(deformation<100){
     car.shapeColor =color(0,25,0)
   }
   }
